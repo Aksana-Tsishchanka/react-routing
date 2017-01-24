@@ -11,7 +11,11 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "webpack-dev-server --inline --content-base . --history-api-fallback",
+    "start": "node index.js",
+    "start:json": "json-server --watch db.json --port 3000",
+    "run": "concurrently --kill-others \"npm run start:dev\" \"npm run start\""
+
   },
   "devDependencies": {
     "babel-core": "6.11.4",
