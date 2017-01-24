@@ -1,0 +1,6 @@
+{
+	"tasks": [
+		{ "id": 1, "title": "Finish all tasks", "isCompleted": false },
+		{ "id": 2, "title": "Kill all humans", "isCompleted": true }
+	]
+}
