@@ -1,19 +1,39 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Finish all tasks",
-      "isCompleted": false
+      "title": "Moskov",
+      "isCompleted": false,
+      "id": 1
     },
     {
       "id": 2,
-      "title": "Kill all humans",
+      "title": "Gomel",
       "isCompleted": true
     },
     {
-      "login": "123",
-      "password": "345",
-      "id": 3
+      "id": 3,
+      "title": "Marmaris",
+      "isCompleted": true
+    },
+    {
+      "isCompleted": true,
+      "title": "Gomel",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "Budapest",
+      "isCompleted": true
+    },
+    {
+      "isCompleted": true,
+      "title": "Budapest",
+      "id": 6
+    },
+    {
+      "title": "Amsterdam",
+      "isCompleted": true,
+      "id": 7
     }
   ]
 }

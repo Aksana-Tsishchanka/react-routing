@@ -2,17 +2,17 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   context: __dirname + '/src',
   entry: {
-    app: ['es6-promise', 'whatwg-fetch', "./components/app.js"],
+    app: ['es6-promise', 'whatwg-fetch', './components/app.js'],
   },
   output: {
     path: path.join(__dirname, '/build'),
-    filename: "[name].js",
+    filename: '[name].js',
     library: '[name]',
   },
   module: {
@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]"
+        loader: 'file?name=[name].[ext]'
       },
     ] 
   },
