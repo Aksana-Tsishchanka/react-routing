@@ -22,9 +22,9 @@ export default class Logout extends React.Component {
 
   render() {
     return (
-      <ul>
-        <li><a onClick={this.updateAuthState}>Log Out</a></li>
-      </ul>
+      <div>
+        <button type="button" onClick={this.updateAuthState}>Log Out</button>
+      </div>
     );
   }
 }

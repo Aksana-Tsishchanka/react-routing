@@ -2,32 +2,32 @@
   "tasks": [
     {
       "title": "Moskov",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 1
     },
     {
-      "id": 2,
       "title": "Gomel",
-      "isCompleted": true
-    },
-    {
-      "id": 3,
-      "title": "Marmaris",
-      "isCompleted": true
-    },
-    {
       "isCompleted": true,
+      "id": 2
+    },
+    {
+      "title": "Marmaris",
+      "isCompleted": true,
+      "id": 3
+    },
+    {
       "title": "Gomel",
+      "isCompleted": false,
       "id": 4
     },
     {
-      "id": 5,
       "title": "Budapest",
-      "isCompleted": true
+      "isCompleted": false,
+      "id": 5
     },
     {
-      "isCompleted": true,
       "title": "Budapest",
+      "isCompleted": false,
       "id": 6
     },
     {

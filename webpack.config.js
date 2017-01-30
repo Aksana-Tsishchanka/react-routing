@@ -16,7 +16,7 @@ module.exports = {
     library: '[name]',
   },
   module: {
-    loaders:[
+    loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -33,9 +33,9 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]'
+        loader: 'file?name=[name].[ext]',
       },
-    ] 
+    ],
   },
 
   devtool: null,
@@ -45,10 +45,10 @@ module.exports = {
   ] : [
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false},
+      compress: { warnings: false },
     }),
     new ExtractTextPlugin('css/[name][hash].css'),
-    new HtmlWebpackPlugin( {
+    new HtmlWebpackPlugin({
       title: 'ReactJS Routing',
       filename: '../index.html',
       hash: true,
@@ -57,7 +57,7 @@ module.exports = {
       root: __dirname,
       verbose: true,
       dry: false,
-    })
+    }),
   ],
   devServer: {},
 };

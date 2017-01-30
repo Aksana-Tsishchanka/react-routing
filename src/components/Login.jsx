@@ -9,11 +9,22 @@ export default class Login extends React.Component {
     this.state = {
       login: '',
       password: '',
+      showError: false,
     };
     this.onChangeInput = this.onChangeInput.bind(this);
     this.onLogin = this.onLogin.bind(this);
+    this.onHandleLogin = this.onHandleLogin.bind(this);
   }
 
+  onHandleLogin(status) {
+    if (status === 200) {
+      browserHistory.push('todo');
+    } else {
+      this.setState({
+        showError: true,
+      });
+    }
+  }
 
   onChangeInput({ target: { value, name } }) {
     this.setState({
@@ -29,8 +40,8 @@ export default class Login extends React.Component {
     };
 
     sendRequest('login', init)
-      .then(response => response);
-    browserHistory.push('todo');
+      .then(response => response)
+      .then(response => this.onHandleLogin(response.status));
   }
 
   render() {
@@ -57,6 +68,7 @@ export default class Login extends React.Component {
             />
           </div>
           <button onClick={this.onLogin}>Log in</button>
+          { this.state.showError ? <div style={{ color: '#ef3933' }}>Your credentials are wrong</div> : '' }
         </form>
       </div>
     );
