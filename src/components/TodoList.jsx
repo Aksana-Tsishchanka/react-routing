@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import sendRequest from './api';
 import TodoItem from './TodoItem.jsx';
 import Logout from './Logout.jsx';
@@ -81,12 +80,17 @@ export default class TodoList extends React.Component {
   }
 
   makeTodoList(array = [], filterView) {
-    let resultArr = array;
-    if (filterView === FILTER_VIEW.completed) {
-      resultArr = resultArr.filter(el => el.isCompleted);
-    }
-    if (filterView === FILTER_VIEW.incompleted) {
-      resultArr = resultArr.filter(el => !el.isCompleted);
+    let resultArr;
+    switch (filterView) {
+      case FILTER_VIEW.completed:
+        resultArr = array.filter(el => el.isCompleted);
+        break;
+      case FILTER_VIEW.incompleted:
+        resultArr = array.filter(el => !el.isCompleted);
+        break;
+      default:
+        resultArr = array;
+        break;
     }
     return resultArr.map(item =>
       <TodoItem

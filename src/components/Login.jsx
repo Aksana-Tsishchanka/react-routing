@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import sendRequest from './api';
 
 export default class Login extends React.Component {
+
   constructor(props) {
     super(props);
 

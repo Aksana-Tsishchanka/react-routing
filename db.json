@@ -12,7 +12,7 @@
     },
     {
       "title": "Marmaris",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 3
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "title": "Budapest",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 5
     },
     {
       "title": "Budapest",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 6
     },
     {
