@@ -7,7 +7,7 @@
     },
     {
       "title": "Gomel",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 2
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "title": "Budapest",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 6
     },
     {

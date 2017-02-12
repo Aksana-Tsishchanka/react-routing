@@ -6,14 +6,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  context: __dirname + '/src',
+  context: path.join(__dirname, '/src'),
   entry: {
-    app: ['es6-promise', 'whatwg-fetch', './components/app.js'],
+    app: ['es6-promise', 'whatwg-fetch', './app.js'],
   },
   output: {
     path: path.join(__dirname, '/build'),
-    filename: '[name].js',
-    library: '[name]',
+    filename: 'app.js',
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
@@ -21,11 +23,6 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/,
       },
       {
         test: /\.css$/,

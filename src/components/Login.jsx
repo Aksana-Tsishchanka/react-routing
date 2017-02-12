@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import sendRequest from './api';
+import sendRequest from '../api/api';
 
 export default class Login extends React.Component {
 

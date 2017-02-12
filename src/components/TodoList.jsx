@@ -1,7 +1,7 @@
 import React from 'react';
-import sendRequest from './api';
-import TodoItem from './TodoItem.jsx';
-import Logout from './Logout.jsx';
+import sendRequest from '../api/api';
+import TodoItem from './TodoItem';
+import Logout from './Logout';
 
 const FILTER_VIEW = {
   all: 'all',

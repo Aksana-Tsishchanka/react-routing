@@ -3,6 +3,7 @@ const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 const session = require('express-session');
+// const path = require('path');
 
 server.use(middlewares);
 server.use(session({
@@ -10,6 +11,13 @@ server.use(session({
 }));
 
 server.use(jsonServer.bodyParser);
+
+/* send all requests to index.html so browserHistory in React Router works
+ server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+*/
+
 server.post('/login', (req, res) => {
   const { login, password } = req.body;
   if (login === 'admin' && password === 'admin') {
@@ -32,7 +40,9 @@ server.use((req, res, next) => {
     res.sendStatus(401);
   }
 });
+
 server.use(router);
+
 server.listen(3000, function () {
-  console.log('JSON Server is running')
+  console.log('JSON Server is running');
 });
