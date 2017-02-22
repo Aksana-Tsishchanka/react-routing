@@ -12,12 +12,6 @@ server.use(session({
 
 server.use(jsonServer.bodyParser);
 
-/* send all requests to index.html so browserHistory in React Router works
- server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-*/
-
 server.post('/login', (req, res) => {
   const { login, password } = req.body;
   if (login === 'admin' && password === 'admin') {
@@ -25,6 +19,13 @@ server.post('/login', (req, res) => {
     res.sendStatus(200);
   } else {
     res.sendStatus(400);
+  }
+});
+server.get('/login', (req, res) => {
+  if (req.session.isAuthorized) {
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(401);
   }
 });
 
@@ -43,6 +44,4 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-server.listen(3000, function () {
-  console.log('JSON Server is running');
-});
+server.listen(3000, () => console.log('JSON Server is running'));

@@ -1,6 +1,8 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import sendRequest from '../api/api';
+import { deleteLocalStorageItem } from '../utils/localStorageUtils';
+import LOG_IN_KEY from '../consts/consts';
 
 export default class Logout extends React.Component {
   constructor(props) {
@@ -13,7 +15,7 @@ export default class Logout extends React.Component {
     e.preventDefault();
 
     sendRequest('logout')
-      .then(console.log('user logout'));
+      .then(deleteLocalStorageItem(LOG_IN_KEY));
 
     browserHistory.push({
       pathname: '/login',

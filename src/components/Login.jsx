@@ -1,6 +1,8 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import sendRequest from '../api/api';
+import LOG_IN_KEY from '../consts/consts';
+import { setLocalStorageItem } from '../utils/localStorageUtils';
 
 export default class Login extends React.Component {
 
@@ -19,7 +21,8 @@ export default class Login extends React.Component {
 
   onHandleLogin(status) {
     if (status === 200) {
-      browserHistory.push('todo');
+      setLocalStorageItem(LOG_IN_KEY, '1');
+      browserHistory.push('/todo');
     } else {
       this.setState({
         showError: true,

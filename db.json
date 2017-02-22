@@ -7,17 +7,17 @@
     },
     {
       "title": "Gomel",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 2
     },
     {
       "title": "Marmaris",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 3
     },
     {
       "title": "Gomel",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 4
     },
     {

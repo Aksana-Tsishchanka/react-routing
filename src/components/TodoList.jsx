@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, browserHistory } from 'react-router';
 import sendRequest from '../api/api';
 import TodoItem from './TodoItem';
 import Logout from './Logout';
@@ -23,6 +24,7 @@ export default class TodoList extends React.Component {
     this.showCompleted = this.showCompleted.bind(this);
     this.showAll = this.showAll.bind(this);
     this.showIncompleted = this.showIncompleted.bind(this);
+    this.processResponse = this.processResponse.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +42,14 @@ export default class TodoList extends React.Component {
       this.setState({
         filterView: FILTER_VIEW.all,
       });
+    }
+  }
+
+  processResponse(status) {
+    if (status === 200 || status === 304)  {
+      this.updateTasksList();
+    } else {
+      browserHistory.push('/login');
     }
   }
 
@@ -118,6 +128,11 @@ export default class TodoList extends React.Component {
 
     const todoComponent = this.state.tasks ? (
       <div>
+        <div>
+          <Link to="/todo" activeStyle={{ color: '#53acff' }}> | TODO list</Link>
+          <Link to="/todo/completed" activeStyle={{ color: '#53acff' }}> | Only completed items</Link>
+          <Link to="/todo/incompleted" activeStyle={{ color: '#53acff' }}> | Only incompleted items</Link>
+        </div>
         <Logout />
         <h1>TO DO list</h1>
         { this.makeTodoList(this.state.tasks, this.state.filterView) }
