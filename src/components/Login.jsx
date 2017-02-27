@@ -17,9 +17,11 @@ export default class Login extends React.Component {
     this.onChangeInput = this.onChangeInput.bind(this);
     this.onLogin = this.onLogin.bind(this);
     this.onHandleLogin = this.onHandleLogin.bind(this);
+    this.onShowLoginError = this.onShowLoginError.bind(this);
   }
 
-  onHandleLogin(status) {
+  onHandleLogin({ status }) {
+    debugger;
     if (status === 200) {
       setLocalStorageItem(LOG_IN_KEY, '1');
       browserHistory.push('/todo');
@@ -28,6 +30,11 @@ export default class Login extends React.Component {
         showError: true,
       });
     }
+  }
+  onShowLoginError() {
+    this.setState({
+      showError: true,
+    });
   }
 
   onChangeInput({ target: { value, name } }) {
@@ -43,9 +50,9 @@ export default class Login extends React.Component {
       body: JSON.stringify(this.state),
     };
 
-    sendRequest('login', init)
-      .then(response => response)
-      .then(response => this.onHandleLogin(response.status));
+    sendRequest('login', init, () => {})
+      .then(response => this.onHandleLogin(response))
+      .catch(this.onShowLoginError());
   }
 
   render() {

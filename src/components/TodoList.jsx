@@ -46,7 +46,7 @@ export default class TodoList extends React.Component {
   }
 
   processResponse(status) {
-    if (status === 200 || status === 304)  {
+    if (status === 200 || status === 304) {
       this.updateTasksList();
     } else {
       browserHistory.push('/login');

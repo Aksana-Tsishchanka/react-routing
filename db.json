@@ -17,12 +17,12 @@
     },
     {
       "title": "Gomel",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 4
     },
     {
       "title": "Budapest",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 5
     },
     {
