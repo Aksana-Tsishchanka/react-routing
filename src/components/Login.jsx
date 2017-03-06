@@ -20,16 +20,10 @@ export default class Login extends React.Component {
     this.onShowLoginError = this.onShowLoginError.bind(this);
   }
 
-  onHandleLogin({ status }) {
-    debugger;
-    if (status === 200) {
-      setLocalStorageItem(LOG_IN_KEY, '1');
-      browserHistory.push('/todo');
-    } else {
-      this.setState({
-        showError: true,
-      });
-    }
+  onHandleLogin() {
+    console.log('1');
+    setLocalStorageItem(LOG_IN_KEY, '1');
+    browserHistory.push('/todo');
   }
   onShowLoginError() {
     this.setState({
@@ -51,7 +45,7 @@ export default class Login extends React.Component {
     };
 
     sendRequest('login', init, () => {})
-      .then(response => this.onHandleLogin(response))
+      .then(() => this.onHandleLogin())
       .catch(this.onShowLoginError());
   }
 
