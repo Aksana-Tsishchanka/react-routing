@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import sendRequest from '../api/api';
 import { deleteLocalStorageItem } from '../utils/localStorageUtils';
 import LOG_IN_KEY from '../consts/consts';
+import './style.css';
 
 export default class Logout extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ export default class Logout extends React.Component {
   render() {
     return (
       <div>
-        <button type="button" onClick={this.updateAuthState}>Log Out</button>
+        <button type="button" className="btn" onClick={this.updateAuthState}>Log Out</button>
       </div>
     );
   }

@@ -16,12 +16,10 @@ export default class Login extends React.Component {
     };
     this.onChangeInput = this.onChangeInput.bind(this);
     this.onLogin = this.onLogin.bind(this);
-    this.onHandleLogin = this.onHandleLogin.bind(this);
     this.onShowLoginError = this.onShowLoginError.bind(this);
   }
 
-  onHandleLogin() {
-    console.log('1');
+  onHandleLogin = () => {
     setLocalStorageItem(LOG_IN_KEY, '1');
     browserHistory.push('/todo');
   }
